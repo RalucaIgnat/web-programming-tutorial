@@ -12,8 +12,8 @@ function addNumbers(a, b) {
      console.info ('primul nr este ' + a);
      console.info ('al doilea  nr este ' + b);
      for (;b > 0;) {
-        a++;
-        b--;
+        a++;  // il punem la a
+        b--; // luam un deget de la b
          console.info(a +  ' au  mai ramas ' + b +  'degetele')
      }
     console.info('suma este: ' +a)
