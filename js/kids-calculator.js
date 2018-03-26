@@ -11,8 +11,9 @@ function countTo(n) {
 function addNumbers(a, b) {
      console.info ('primul nr este ' + a);
      console.info ('al doilea  nr este ' + b);
-     for (;b > 0;b--) {
+     for (;b > 0;) {
         a++;
+        b--;
          console.info(a +  ' au  mai ramas ' + b +  'degetele')
      }
     console.info('suma este: ' +a)
