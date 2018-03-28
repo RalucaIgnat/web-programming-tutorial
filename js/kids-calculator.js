@@ -1,38 +1,30 @@
+
+
+
+
 function countTo(n) {
+    var i = 1;
+    for ( ; i<= n; i=i+2) {
 
-    for (; i <= n; i += 5) {
-        console.info(i);
-        i++;
+        console.info('i');
     }
-
 
 }
 
 function addNumbers(a, b) {
-    console.info('primul nr este ' + a);
-    console.info('al doilea  nr este ' + b);
+    console.info('prinul numar este ' + a);
+    console.info('al doilea numar este ' + b);
 
-    if (a < b) {
-        var suma = a; // este nr cel mai mare
-        var degete = b; // este nr cel mai mic
+    for (;b > 0; ) {
+        a++; // il punem la a
+        b--; //luam un deget de la b
+        console.info(a + ' - au mai ramas ' + b  + ' degetele');
+        }
 
-    }
-
-
-    while (degete > 0) {
-        degete--; //luam un deget de la b
-        suma++; // il punem la a
-        console.info(suma + ' - au mai ramas ' + degete + ' degetele');
-    }
-    console.info('suma este:' + suma);
-
-    // for (; degete > 0;) {
-    //     degete--; // // luam un deget de la b
-    //     suma++;  // il punem la a
-    //     console.info(suma + ' au  mai ramas ' + degete + 'degetele');
-    // }
-    // console.info('suma este: ' + suma);
+        console.info('suma este: ' + a);
 }
 
 
-var count = addNumbers(2, 6);
+
+
+var count = addNumbers(5,3);
