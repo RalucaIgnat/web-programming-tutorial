@@ -3,22 +3,27 @@ function getRow(firstName,lastName,phone){
     return "<tr><td>" + firstName +"</td><td>" + lastName +"</td><td>" + phone +"</td></tr>";
 }
 
-var persons = [
-    //firstName, lastName, phone
-     ["Nicolae","Matei",233],
-     ["Andrei","Ilie",0],
-     ["Raluca", "Ignat", 777],
-    ["Damaris", "Sighiartau", 655]
-];
+var persons = [];
 
-var rows = '';
+//ajax
 
-persons.forEach(function (person) {
-    rows += getRow(person[0],person[1],person[2]);
+$.get('js/mocks/phone-book.json').done(function(data) {
+    console.warn("phone-book loaded",data);
+    display(data);
 });
 
-$('#phone-book tbody').html(rows);
+console.info('should load persons');
 
 
+function display(persons) {
+    var rows = '';
+
+    function createRows(person) {
+        rows += getRow(person["firstName"], person.lastName, person.phone);
+    }
+    persons.forEach(createRows); // callback (afiseaza functia asta pt fiecare pers pe care o ai)
+
+    $('#phone-book tbody').html(rows);
 
 
+}
