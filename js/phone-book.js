@@ -1,21 +1,17 @@
-function getRow(firstName, lastName, phone) {
-    return "<tr><td>" + firstName + "</td><td>" + lastName + "</td><td>" + phone + "</td></tr>";
+
+function(){
 
 }
 
-var persons = [
-    ["Nicolae", "Matei", "123"],
-    ["Andrei", "Matei", "123"],
-    ["Maria", "Matei", "123"],
-    ["Valentin", "Matei", "123"]
-];
-
-var rows = '';
 
 
-for (var i = 0; i < persons.length; i++) {
-    var person = persons[i];
-    rows += getRow(person[0], person[1], person[2]);
-}
+var row1 = "<tr><td>Nicolae</td><td>Matei</td><td>0</td></tr>";
+var row2 = "<tr><td>Andrei</td><td>Ilie</td><td>0</td></tr>";
 
-$('#phone-book tbody').html(rows);
+
+//document.getElementById('phone-book').getElementsByTagName('tbody')[0].innerHTML = row1 +row2;
+
+
+$('#phone-book tbody').html(row1 + row2);
+
+
