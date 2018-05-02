@@ -6,10 +6,10 @@ function getRow(firstName,lastName,phone){
 var persons = [];
 
 //ajax
-
-$.get('js/mocks/phone-book.json').done(function(data) {
-    console.warn("phone-book loaded",data);
-    display(data);
+console.info('execute ajax');
+$.get('js/mocks/phone-book.json').done(function(persons) {
+    console.warn("phone-book loaded",persons);
+    display(persons);
 });
 
 console.info('should load persons');
@@ -22,6 +22,13 @@ function display(persons) {
         rows += getRow(person["firstName"], person.lastName, person.phone);
     }
     persons.forEach(createRows); // callback (afiseaza functia asta pt fiecare pers pe care o ai)
+       rows += '<tr>' +
+           '<td><input type="text" required name="firstName" placeholder="Enter first name"></td>' +
+           '<td><input type="text" name="lastName" placeholder="Enter last name"></td>'+
+           '<td><input type="text" required name="phone" placeholder="Enter phone">' +
+           '<button type ="submit">Add</button></td>' +
+           '</tr>';
+
 
     $('#phone-book tbody').html(rows);
 
